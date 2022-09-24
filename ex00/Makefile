@@ -1,7 +1,7 @@
 CXX			:=	c++
 CXXFLAGS	:=	-Wall -Werror -Wextra -std=c++98
 
-NAME	:=	ex00_out
+NAME	:=	ex00.out
 
 SRCS	:=	main.cpp \
 			Animal.cpp \

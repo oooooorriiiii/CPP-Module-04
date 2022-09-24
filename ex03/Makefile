@@ -1,7 +1,7 @@
 CXX			:=	c++
 CXXFLAGS	:=	-Wall -Werror -Wextra -std=c++98
 
-NAME	:=	ex03_out
+NAME	:=	ex03.out
 
 SRCS	:=	main.cpp \
 			AMateria.cpp \
