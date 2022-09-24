@@ -9,16 +9,15 @@
 #include "ICharacter.hpp"
 
 class Ice : public AMateria {
-public:
-    Ice();
-    Ice(const std::string &type);
-    Ice(const Ice &ice);
-    virtual ~Ice();
-    Ice &operator=(const Ice &ice);
+ public:
+  Ice();
+  Ice(const std::string &type);
+  Ice(const Ice &ice);
+  virtual ~Ice();
+  Ice &operator=(const Ice &ice);
 
-    void        use(ICharacter &target);
-    AMateria    *close() const;
+  void use(ICharacter &target);
+  AMateria *close() const;
 };
-
 
 #endif //EX03_ICE_HPP
