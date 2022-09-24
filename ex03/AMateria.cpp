@@ -6,23 +6,24 @@
 
 AMateria::AMateria() : _type("no type") {}
 
-AMateria::AMateria(const std::string &type) : _type(type){}
+AMateria::AMateria(const std::string &type) : _type(type) {}
 
 AMateria::AMateria(const AMateria &aMateria) {
-	*this = aMateria;
+  *this = aMateria;
 }
 
 AMateria::~AMateria() {}
 
-AMateria& AMateria::operator=(const AMateria &aMateria) {
-	_type = aMateria.getType();
-	return *this;
+AMateria &AMateria::operator=(const AMateria &aMateria) {
+  _type = aMateria.getType();
+  return *this;
 }
 
 void AMateria::use(ICharacter &target) {
-	std::cout << "* shoots an " << _type << " materia at " << target.getName << " *" << std::endl;
+  std::cout << "* shoots an " << _type << " materia at " << target.getName
+            << " *" << std::endl;
 }
 
 const std::string &AMateria::getType() const {
-	return _type;
+  return _type;
 }

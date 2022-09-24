@@ -10,22 +10,21 @@
 class ICharacter;
 
 class AMateria {
-protected:
-	std::string	_type;
-	AMateria(std::string const & type);
+ protected:
+  std::string _type;
+  AMateria(std::string const &type);
 
-public:
-	AMateria();
-	AMateria(std::string const & type);
-	AMateria(const AMateria& copy);
-	AMateria& operator=(const AMateria& aMateria);
-	virtual ~AMateria();
+ public:
+  AMateria();
+  AMateria(std::string const &type);
+  AMateria(const AMateria &copy);
+  AMateria &operator=(const AMateria &aMateria);
+  virtual ~AMateria();
 
-	std::string const & getType() const;
+  std::string const &getType() const;
 
-	virtual AMateria* close() const = 0;
-	virtual void use(ICharacter& target);
+  virtual AMateria *close() const = 0;
+  virtual void use(ICharacter &target);
 };
-
 
 #endif //EX03_AMATERIA_HPP
