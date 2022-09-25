@@ -15,12 +15,14 @@ AMateria::AMateria(const AMateria &aMateria) {
 AMateria::~AMateria() {}
 
 AMateria &AMateria::operator=(const AMateria &aMateria) {
+  if (this == &aMateria)
+    return *this;
   _type = aMateria.getType();
   return *this;
 }
 
 void AMateria::use(ICharacter &target) {
-  std::cout << "* shoots an " << _type << " materia at " << target.getName
+  std::cout << "* shoots an " << _type << " materia at " << target.getName()
             << " *" << std::endl;
 }
 

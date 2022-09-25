@@ -7,12 +7,13 @@
 
 #include <iostream>
 
+#include "ICharacter.hpp"
+
 class ICharacter;
 
 class AMateria {
  protected:
   std::string _type;
-  AMateria(std::string const &type);
 
  public:
   AMateria();
@@ -23,7 +24,7 @@ class AMateria {
 
   std::string const &getType() const;
 
-  virtual AMateria *close() const = 0;
+  virtual AMateria *clone() const = 0;
   virtual void use(ICharacter &target);
 };
 

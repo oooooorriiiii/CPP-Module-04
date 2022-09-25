@@ -5,7 +5,10 @@
 #ifndef EX03_ICHARACTER_HPP
 #define EX03_ICHARACTER_HPP
 
+#include <string>
+
 #include "AMateria.hpp"
+
 class AMateria;
 
 class ICharacter {

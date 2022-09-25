@@ -5,7 +5,10 @@ NAME	:=	ex03.out
 
 SRCS	:=	main.cpp \
 			AMateria.cpp \
-			Character.cpp
+			Character.cpp \
+			Ice.cpp \
+			MateriaSource.cpp \
+			main.cpp
 
 OBJS	:=	$(SRCS:.cpp=.o)
 
