@@ -11,6 +11,7 @@
 int main() {
 
   {
+    std::cout << "*****Subject Test*****" << std::endl;
     IMateriaSource *src = new MateriaSource();
     src->learnMateria(new Ice());
     src->learnMateria(new Cure());
@@ -31,6 +32,34 @@ int main() {
     delete bob;
     delete me;
     delete src;
+  }
+  {
+    try {
+      std::cout << "*****Test 01*****" << std::endl;
+      IMateriaSource *materiaSource = new MateriaSource();
+      materiaSource->learnMateria(new Ice());
+
+      ICharacter *Alice = new Character("Alice");
+      ICharacter *Bob = new Character("Bob");
+
+      AMateria *aMateria;
+      aMateria = materiaSource->createMateria("ice");
+      Alice->equip(aMateria);
+      Alice->equip(aMateria);
+      Alice->equip(aMateria);
+      Alice->equip(aMateria);
+
+      Alice->use(0, *Bob);
+      Alice->use(1, *Bob);
+      Alice->use(2, *Bob);
+      Alice->use(3, *Bob);
+
+      delete Bob;
+      delete Alice;
+      delete materiaSource;
+    } catch (std::exception& e) {
+      std::cout << e.what() << std::endl;
+    }
   }
 
   return 0;
