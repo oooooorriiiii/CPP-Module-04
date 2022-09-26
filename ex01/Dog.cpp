@@ -44,3 +44,7 @@ Dog& Dog::operator=(const Dog &dog) {
 void Dog::makeSound() const {
 	std::cout << "WAN!" << std::endl;
 }
+
+const std::string &Dog::getIdea(const size_t &idx) const {
+  return brain_->getIdeas(idx);
+}

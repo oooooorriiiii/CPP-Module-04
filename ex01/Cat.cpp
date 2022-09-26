@@ -44,3 +44,7 @@ Cat& Cat::operator=(const Cat &cat) {
 void Cat::makeSound() const {
 	std::cout << "NYAN" << std::endl;
 }
+
+const std::string &Cat::getIdea(const size_t &idx) const {
+  return brain_->getIdeas(idx);
+}

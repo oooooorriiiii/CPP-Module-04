@@ -34,3 +34,12 @@ Brain &Brain::operator=(const Brain &brain) {
 }
 
 Brain::~Brain() {}
+
+const std::string &Brain::getIdeas(const size_t &idx) const {
+  if (idx < 100) {
+    return _ideas[idx];
+  } else {
+    std::cerr << "Out of range" << std::endl;
+    return _ideas[0];
+  }
+}

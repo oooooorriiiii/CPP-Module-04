@@ -17,7 +17,8 @@ public:
 	Dog& operator=(const Dog& dog);
 	virtual ~Dog();
 
-	virtual void makeSound() const;
+	void makeSound() const;
+    const std::string &getIdea(const size_t &idx) const;
 
  private:
   Brain *brain_;

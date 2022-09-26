@@ -18,6 +18,7 @@ public:
 	virtual ~Cat();
 
 	virtual void makeSound() const;
+  const std::string &getIdea(const size_t &idx) const;
 
  private:
   Brain *brain_;
