@@ -50,18 +50,54 @@ const std::string &Character::getName() const {
 }
 
 void Character::use(int idx, ICharacter &target) {
-  if ((0 <= idx && idx < 4) && _materias[idx])
-    _materias[idx]->use(target);
+  if (idx < 0 || 4 <= idx) {
+    std::cout << MAGENTA << "[" << _name
+              << "] can't use materia for out of range access." << RESET
+              << std::endl;
+    return;
+  }
+  if (!_materias[idx]) {
+    std::cout << MAGENTA << "[" << _name
+              << "] can't use materia because materia is empty." << RESET
+              << std::endl;
+    return;
+  }
+  std::cout << CYAN << "[" << _name << "] use materia ["
+            << _materias[idx]->getType() << " #" << idx << "]." << RESET
+            << std::endl;
+  _materias[idx]->use(target);
 }
+
 void Character::equip(AMateria *m) {
+  if (!m) {
+    std::cout << MAGENTA << "[" << _name
+              << "] can't equip materia because he/she don't know this materia."
+              << RESET
+              << std::endl;
+    return;
+  }
   for (size_t i = 0; i < 4; i++) {
     if (!_materias[i]) {
+      std::cout << CYAN << "[" << _name << "] equip materia ["
+                << m->getType() << " #" << i << "]." << RESET << std::endl;
       _materias[i] = m;
       return;
     }
   }
 }
+
 void Character::unequip(int idx) {
-  if ((0 <= idx && idx < 4) && _materias[idx])
+  if (idx < 0 || 4 <= idx) {
+    std::cout << MAGENTA << "[" << _name
+              << "] can't unequip materia for out of range access." << RESET
+              << std::endl;
+    return;
+  }
+  if ((0 <= idx && idx < 4) && _materias[idx]) {
+    std::cout << CYAN << "[" << _name << "] unequip materia ["
+              << _materias[idx]->getType() << " #" << idx << "]." << RESET
+              << std::endl;
+    delete _materias[idx];
     _materias[idx] = NULL;
+  }
 }

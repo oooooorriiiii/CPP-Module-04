@@ -36,6 +36,7 @@ int main() {
   {
     try {
       std::cout << "*****Test 01*****" << std::endl;
+      std::cout << "All Ice" << std::endl;
       IMateriaSource *materiaSource = new MateriaSource();
       materiaSource->learnMateria(new Ice());
 
@@ -45,19 +46,150 @@ int main() {
       AMateria *aMateria;
       aMateria = materiaSource->createMateria("ice");
       Alice->equip(aMateria);
+      aMateria = materiaSource->createMateria("ice");
       Alice->equip(aMateria);
+      aMateria = materiaSource->createMateria("ice");
       Alice->equip(aMateria);
+      aMateria = materiaSource->createMateria("ice");
       Alice->equip(aMateria);
 
       Alice->use(0, *Bob);
       Alice->use(1, *Bob);
       Alice->use(2, *Bob);
       Alice->use(3, *Bob);
+      Alice->use(4, *Bob);
 
       delete Bob;
       delete Alice;
       delete materiaSource;
     } catch (std::exception& e) {
+      std::cout << e.what() << std::endl;
+    }
+  }
+  {
+    try {
+      std::cout << "*****Test 02*****" << std::endl;
+      std::cout << "All Cure" << std::endl;
+      IMateriaSource *materiaSource = new MateriaSource();
+      materiaSource->learnMateria(new Cure());
+
+      ICharacter *Alice = new Character("Alice");
+      ICharacter *Bob = new Character("Bob");
+
+      AMateria *aMateria;
+      aMateria = materiaSource->createMateria("cure");
+      Alice->equip(aMateria);
+      aMateria = materiaSource->createMateria("cure");
+      Alice->equip(aMateria);
+      aMateria = materiaSource->createMateria("cure");
+      Alice->equip(aMateria);
+      aMateria = materiaSource->createMateria("cure");
+      Alice->equip(aMateria);
+
+      Alice->use(0, *Bob);
+      Alice->use(1, *Bob);
+      Alice->use(2, *Bob);
+      Alice->use(3, *Bob);
+      Alice->use(4, *Bob);
+
+      delete Bob;
+      delete Alice;
+      delete materiaSource;
+    } catch (std::exception& e) {
+      std::cout << e.what() << std::endl;
+    }
+  }
+  {
+    try {
+      std::cout << "*****Test 03*****" << std::endl;
+      std::cout << "Learn only Cure, use Ice" << std::endl;
+      IMateriaSource *materiaSource = new MateriaSource();
+      materiaSource->learnMateria(new Cure());
+
+      ICharacter *Alice = new Character("Alice");
+      ICharacter *Bob = new Character("Bob");
+
+      AMateria *aMateria;
+      aMateria = materiaSource->createMateria("ice");
+      Alice->equip(aMateria);
+
+      Alice->use(0, *Bob);
+
+      delete Bob;
+      delete Alice;
+      delete materiaSource;
+    } catch (std::exception& e) {
+      std::cout << e.what() << std::endl;
+    }
+  }
+  {
+    try {
+      std::cout << "*****Test 04*****" << std::endl;
+      std::cout << "Without learning anything, use Ice" << std::endl;
+      IMateriaSource *materiaSource = new MateriaSource();
+
+      ICharacter *Alice = new Character("Alice");
+      ICharacter *Bob = new Character("Bob");
+
+      AMateria *aMateria;
+      aMateria = materiaSource->createMateria("ice");
+      Alice->equip(aMateria);
+
+      Alice->use(0, *Bob);
+
+      delete Bob;
+      delete Alice;
+      delete materiaSource;
+    } catch (std::exception &e) {
+      std::cout << e.what() << std::endl;
+    }
+  }
+  {
+    try {
+      std::cout << "*****Test 05*****" << std::endl;
+      std::cout << "unequip" << std::endl;
+      IMateriaSource *materiaSource = new MateriaSource();
+      materiaSource->learnMateria(new Ice());
+
+      ICharacter *Alice = new Character("Alice");
+      ICharacter *Bob = new Character("Bob");
+
+      AMateria *aMateria;
+      aMateria = materiaSource->createMateria("ice");
+      Alice->equip(aMateria);
+
+      Alice->use(0, *Bob);
+      Alice->unequip(0);
+      Alice->use(0, *Bob);
+
+      delete Bob;
+      delete Alice;
+      delete materiaSource;
+    } catch (std::exception &e) {
+      std::cout << e.what() << std::endl;
+    }
+  }
+  {
+    try {
+      std::cout << "*****Test 06*****" << std::endl;
+      std::cout << "empty materia access" << std::endl;
+      IMateriaSource *materiaSource = new MateriaSource();
+      materiaSource->learnMateria(new Ice());
+
+      ICharacter *Alice = new Character("Alice");
+      ICharacter *Bob = new Character("Bob");
+
+      AMateria *aMateria;
+      aMateria = materiaSource->createMateria("ice");
+      Alice->equip(aMateria);
+
+      Alice->use(0, *Bob);
+      Alice->use(1, *Bob);
+
+      delete Bob;
+      delete Alice;
+      delete materiaSource;
+    } catch (std::exception &e) {
       std::cout << e.what() << std::endl;
     }
   }

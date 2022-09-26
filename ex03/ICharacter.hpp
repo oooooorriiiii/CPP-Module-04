@@ -11,6 +11,7 @@
 
 class AMateria;
 
+// Abstract class
 class ICharacter {
  public:
   virtual ~ICharacter() {}
