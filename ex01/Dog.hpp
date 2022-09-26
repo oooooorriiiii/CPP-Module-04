@@ -2,8 +2,8 @@
 // Created by yuumo on 2022/08/02.
 //
 
-#ifndef EX00_DOG_HPP
-#define EX00_DOG_HPP
+#ifndef EX01_DOG_HPP
+#define EX01_DOG_HPP
 
 #include <iostream>
 #include "Animal.hpp"
@@ -27,4 +27,4 @@ public:
 # define MAGENTA		"\033[35m"				/* Magenta */
 # define CYAN			"\033[36m"				/* Cyan */
 
-#endif //EX00_DOG_HPP
+#endif //EX01_DOG_HPP

@@ -2,8 +2,8 @@
 // Created by yuumo on 2022/08/02.
 //
 
-#ifndef EX00_CAT_HPP
-#define EX00_CAT_HPP
+#ifndef EX01_CAT_HPP
+#define EX01_CAT_HPP
 
 #include <iostream>
 #include "Animal.hpp"
@@ -26,4 +26,5 @@ public:
 # define BLUE			"\033[34m"				/* Blue */
 # define MAGENTA		"\033[35m"				/* Magenta */
 # define CYAN			"\033[36m"				/* Cyan */
-#endif //EX00_CAT_HPP
+
+#endif //EX01_CAT_HPP
