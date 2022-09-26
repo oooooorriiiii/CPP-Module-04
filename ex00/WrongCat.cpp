@@ -5,20 +5,20 @@
 #include "WrongCat.hpp"
 
 WrongCat::WrongCat() : WrongAnimal("WrongCat") {
-	std::cout << "Default constructor is called in WrongCat" << std::endl;
+	std::cout << BLUE << "Default constructor is called in WrongCat" << RESET << std::endl;
 }
 
 WrongCat::WrongCat(const std::string &type) : WrongAnimal(type) {
-	std::cout << "Constructor is called in WrongCat" << std::endl;
+	std::cout << BLUE << "Constructor is called in WrongCat" << RESET << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &dog) {
-	*this = dog;
-	std::cout << "Copy constructor is called in WrongCat" << std::endl;
+WrongCat::WrongCat(const WrongCat &cat) : WrongAnimal(cat) {
+	*this = cat;
+	std::cout << BLUE << "Copy constructor is called in WrongCat" << RESET << std::endl;
 }
 
 WrongCat::~WrongCat() {
-	std::cout << "destructor is called in WrongCat" << std::endl;
+	std::cout << BLUE << "destructor is called in WrongCat" << RESET << std::endl;
 }
 
 WrongCat& WrongCat::operator=(const WrongCat &dog) {

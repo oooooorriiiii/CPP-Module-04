@@ -5,20 +5,20 @@
 #include "Cat.hpp"
 
 Cat::Cat() : Animal("Cat") {
-	std::cout << "Default constructor is called in Cat" << std::endl;
+	std::cout << BLUE << "Default constructor is called in Cat" << RESET << std::endl;
 }
 
 Cat::Cat(const std::string &type) : Animal(type) {
-	std::cout << "Constructor is called in Cat" << std::endl;
+	std::cout << BLUE << "Constructor is called in Cat" << RESET << std::endl;
 }
 
-Cat::Cat(const Cat &cat) {
+Cat::Cat(const Cat &cat) : Animal(cat) {
 	*this = cat;
-	std::cout << "Copy constructor is called in Cat" << std::endl;
+	std::cout << BLUE << "Copy constructor is called in Cat" << RESET << std::endl;
 }
 
 Cat::~Cat() {
-	std::cout << "destructor is called in Cat" << std::endl;
+	std::cout << BLUE << "destructor is called in Cat" << RESET << std::endl;
 }
 
 Cat& Cat::operator=(const Cat &cat) {

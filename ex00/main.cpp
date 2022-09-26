@@ -9,31 +9,38 @@
 #include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
-int	main() {
-	const Animal* meta = new Animal();
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+int main() {
+  {
+    std::cout << "*****Subject Test*****" << std::endl;
 
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	i->makeSound(); //will output the cat sound!
-	j->makeSound();
-	meta->makeSound();
+    const Animal *meta = new Animal();
+    const Animal *j = new Dog();
+    const Animal *i = new Cat();
 
-	delete meta;
-	delete j;
-	delete i;
+    std::cout << j->getType() << " " << std::endl;
+    std::cout << i->getType() << " " << std::endl;
+    i->makeSound(); //will output the cat sound!
+    j->makeSound();
+    meta->makeSound();
 
-	std::cout << "***************************" << std::endl;
+    delete meta;
+    delete j;
+    delete i;
+  }
+  {
+    std::cout << "*****Test 01*****" << std::endl;
+    std::cout << "WrongAnimal" << std::endl;
 
-	const WrongAnimal* wrongMeta = new WrongAnimal();
-	const WrongCat*    k = new WrongCat();
-	std::cout << k->getType() << " " << std::endl;
-	k->makeSound();
-	wrongMeta->makeSound();
+    const WrongAnimal *wrongMeta = new WrongAnimal();
+    const WrongCat *k = new WrongCat();
+    std::cout << k->getType() << " " << std::endl;
+    //
+    k->makeSound();
+    wrongMeta->makeSound();
 
-	delete wrongMeta;
-	delete k;
+    delete wrongMeta;
+    delete k;
+  }
 
-	return 0;
+  return 0;
 }
