@@ -21,7 +21,7 @@ WrongCat::WrongCat(const WrongCat &cat) : WrongAnimal(cat) {
 }
 
 WrongCat::~WrongCat() {
-  std::cout << BLUE << "destructor is called in WrongCat" << RESET << std::endl;
+  std::cout << BLUE << "Destructor is called in WrongCat" << RESET << std::endl;
 }
 
 WrongCat &WrongCat::operator=(const WrongCat &dog) {
@@ -31,5 +31,5 @@ WrongCat &WrongCat::operator=(const WrongCat &dog) {
 }
 
 void WrongCat::makeSound() const {
-  std::cout << "I am not cat, I am completely human." << std::endl;
+  std::cout << "GRAAAAAAAAAAAAAAAA" << std::endl;
 }

@@ -20,7 +20,7 @@ Cat::Cat(const Cat &cat) : Animal(cat) {
 }
 
 Cat::~Cat() {
-  std::cout << BLUE << "destructor is called in Cat" << RESET << std::endl;
+  std::cout << BLUE << "Eestructor is called in Cat" << RESET << std::endl;
 }
 
 Cat &Cat::operator=(const Cat &cat) {
