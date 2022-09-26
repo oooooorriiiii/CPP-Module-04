@@ -7,15 +7,15 @@
 
 #include "WrongAnimal.hpp"
 
-class WrongCat : public WrongAnimal{
-public:
-	WrongCat();
-	WrongCat(const std::string& type);
-	WrongCat(const WrongCat& wrongCat);
-	WrongCat& operator=(const WrongCat& wrongCat);
-	virtual ~WrongCat();
+class WrongCat : public WrongAnimal {
+ public:
+  WrongCat();
+  WrongCat(const std::string &type);
+  WrongCat(const WrongCat &wrongCat);
+  WrongCat &operator=(const WrongCat &wrongCat);
+  virtual ~WrongCat();
 
-	void	makeSound() const;
+  void makeSound() const;
 };
 
 # define RESET			"\033[0m"

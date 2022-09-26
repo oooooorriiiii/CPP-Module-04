@@ -8,18 +8,18 @@
 #include <iostream>
 
 class WrongAnimal {
-public:
-	WrongAnimal();
-	WrongAnimal(const std::string& type);
-	WrongAnimal(const WrongAnimal& wrongAnimal);
-	WrongAnimal& operator=(const WrongAnimal& wrongAnimal);
-	virtual ~WrongAnimal();
+ public:
+  WrongAnimal();
+  WrongAnimal(const std::string &type);
+  WrongAnimal(const WrongAnimal &wrongAnimal);
+  WrongAnimal &operator=(const WrongAnimal &wrongAnimal);
+  virtual ~WrongAnimal();
 
-	virtual void makeSound() const;
-	const std::string& getType() const;
+  virtual void makeSound() const;
+  const std::string &getType() const;
 
-protected:
-	std::string _type;
+ protected:
+  std::string _type;
 
 };
 

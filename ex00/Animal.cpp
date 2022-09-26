@@ -15,7 +15,8 @@ Animal::Animal(const std::string &type) : _type(type) {
 
 Animal::Animal(const Animal &animal) {
   *this = animal;
-  std::cout << CYAN << "Copy constructor is called in Animal" << RESET<< std::endl;
+  std::cout << CYAN << "Copy constructor is called in Animal" << RESET
+            << std::endl;
 }
 
 Animal::~Animal() {

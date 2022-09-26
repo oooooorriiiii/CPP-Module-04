@@ -9,14 +9,14 @@
 #include "Animal.hpp"
 
 class Cat : public Animal {
-public:
-	Cat();
-	Cat(const std::string &type);
-	Cat(const Cat &cat);
-	Cat &operator=(const Cat &cat);
-	virtual ~Cat();
+ public:
+  Cat();
+  Cat(const std::string &type);
+  Cat(const Cat &cat);
+  Cat &operator=(const Cat &cat);
+  virtual ~Cat();
 
-	virtual void makeSound() const;
+  virtual void makeSound() const;
 };
 
 # define RESET			"\033[0m"
