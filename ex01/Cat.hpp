@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
 class Cat : public Animal {
 public:
@@ -17,6 +18,9 @@ public:
 	virtual ~Cat();
 
 	virtual void makeSound() const;
+
+ private:
+  Brain *brain_;
 };
 
 # define RESET			"\033[0m"

@@ -4,7 +4,7 @@
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat") {
+Cat::Cat() : Animal("Cat"), brain_(new Brain()) {
 	std::cout << BLUE << "Default constructor is called in Cat" << RESET << std::endl;
 }
 
@@ -13,17 +13,31 @@ Cat::Cat(const std::string &type) : Animal(type) {
 }
 
 Cat::Cat(const Cat &cat) : Animal(cat) {
-	*this = cat;
 	std::cout << BLUE << "Copy constructor is called in Cat" << RESET << std::endl;
+    if (cat.brain_) {
+      brain_ = new Brain(*(cat.brain_));
+    } else {
+      brain_ = NULL;
+    }
 }
 
 Cat::~Cat() {
 	std::cout << BLUE << "Destructor is called in Cat" << RESET << std::endl;
+    delete brain_;
 }
 
 Cat& Cat::operator=(const Cat &cat) {
 	std::cout << "Assignation operator is called in Cat" << std::endl;
+    if (this == &cat) {
+      return *this;
+    }
 	_type = cat._type;
+    delete brain_;
+    if (cat.brain_) {
+      brain_ = new Brain(*(cat.brain_));
+    } else {
+      brain_ = NULL;
+    }
 	return *this;
 }
 
