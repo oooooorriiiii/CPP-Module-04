@@ -57,6 +57,7 @@ int main() {
       Alice->use(1, *Bob);
       Alice->use(2, *Bob);
       Alice->use(3, *Bob);
+      // out of range access
       Alice->use(4, *Bob);
 
       delete Bob;
@@ -90,6 +91,7 @@ int main() {
       Alice->use(1, *Bob);
       Alice->use(2, *Bob);
       Alice->use(3, *Bob);
+      // out of range access
       Alice->use(4, *Bob);
 
       delete Bob;
@@ -110,6 +112,7 @@ int main() {
       ICharacter *Bob = new Character("Bob");
 
       AMateria *aMateria;
+      // don't learn "ice" materia
       aMateria = materiaSource->createMateria("ice");
       Alice->equip(aMateria);
 
@@ -132,6 +135,7 @@ int main() {
       ICharacter *Bob = new Character("Bob");
 
       AMateria *aMateria;
+      // don't learn "ice" materia
       aMateria = materiaSource->createMateria("ice");
       Alice->equip(aMateria);
 
@@ -160,6 +164,7 @@ int main() {
 
       Alice->use(0, *Bob);
       Alice->unequip(0);
+      // access to equip after unequip
       Alice->use(0, *Bob);
 
       delete Bob;
@@ -184,6 +189,8 @@ int main() {
       Alice->equip(aMateria);
 
       Alice->use(0, *Bob);
+
+      // access to empty materia
       Alice->use(1, *Bob);
 
       delete Bob;
