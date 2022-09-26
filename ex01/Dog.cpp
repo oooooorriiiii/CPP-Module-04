@@ -46,5 +46,5 @@ void Dog::makeSound() const {
 }
 
 const std::string &Dog::getIdea(const size_t &idx) const {
-  return brain_->getIdeas(idx);
+  return brain_->getIdea(idx);
 }

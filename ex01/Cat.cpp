@@ -46,5 +46,5 @@ void Cat::makeSound() const {
 }
 
 const std::string &Cat::getIdea(const size_t &idx) const {
-  return brain_->getIdeas(idx);
+  return brain_->getIdea(idx);
 }

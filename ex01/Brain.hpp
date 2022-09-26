@@ -15,7 +15,7 @@ public:
 	Brain& operator=(const Brain& brain);
 	virtual ~Brain();
 
-    const std::string &getIdeas(const size_t &idx) const;
+    const std::string &getIdea(const size_t &idx) const;
 private:
 	std::string	_ideas[100];
 };
