@@ -18,11 +18,11 @@ Animal::Animal(const Animal &animal) {
 }
 
 Animal::~Animal() {
-	std::cout << "destructor is called in Animal" << std::endl;
+	std::cout << "Destructor is called in Animal" << std::endl;
 }
 
 void Animal::makeSound() const {
-	std::cout << "I am animal." << std::endl;
+	std::cout << "Animal Animal..." << std::endl;
 }
 
 const std::string& Animal::getType() const {
