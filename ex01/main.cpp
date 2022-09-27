@@ -7,9 +7,14 @@
 #include "Cat.hpp"
 #include "Brain.hpp"
 
-void  printAnimalIdea(Animal *animals, const size_t sample_i) {
-  std::cout << animals->getType() << "'s idea[" << sample_i << "]:"
-            << animals->getIdea(sample_i) << std::endl;
+void  printDog(const Dog& dog, const size_t sample_i) {
+  std::cout << GREEN << dog.getType() << "'s idea[" << sample_i << "]:"
+            << dog.getIdea(sample_i) << RESET << std::endl;
+}
+
+void  printCat(const Cat& cat, const size_t sample_i) {
+  std::cout << GREEN << cat.getType() << "'s idea[" << sample_i << "]:"
+            << cat.getIdea(sample_i) << RESET << std::endl;
 }
 
 int main() {
@@ -38,16 +43,53 @@ int main() {
 
     for (int i = 0; i < 4; i++) {
       animals[i]->makeSound();
-      animals[i]->setIdea(3, "I have lunch");
-      animals[i]->setIdea(4242, "I have lunch"); // Out of range
-      printAnimalIdea(animals[i], 3);
-      printAnimalIdea(animals[i], 4);
-      printAnimalIdea(animals[i], 424242); // Out of range
     }
 
     for (int i = 0; i < 4; i++) {
       delete animals[i];
     }
+  }
+  {
+    std::cout << "*****Test 02*****" << std::endl;
+    std::cout << "Dog copy, getIdea, setIdea" << std::endl;
+    std::cout << "*****************" << std::endl;
+
+    // Check deep copy
+    Dog dog1;
+    Dog dog2 = dog1;
+    dog1.setIdea(1, "I have lunch");
+    printDog(dog1, 1);
+    printDog(dog2, 1);
+
+    dog1.setIdea(1, "I learn programming");
+    printDog(dog1, 1);
+    printDog(dog2, 1);
+
+    // Check error case for Dog::getIdea, Dog::setIdea
+    Dog dog3;
+    dog3.setIdea(4242, "I have lunch");
+    dog3.getIdea(4242);
+  }
+  {
+    std::cout << "*****Test 03*****" << std::endl;
+    std::cout << "Cat copy, getIdea, setIdea" << std::endl;
+    std::cout << "*****************" << std::endl;
+
+    // Check deep copy
+    Cat cat1;
+    Cat cat2 = cat1;
+    cat1.setIdea(1, "I have lunch");
+    printCat(cat1, 1);
+    printCat(cat2, 1);
+
+    cat1.setIdea(1, "I learn programming");
+    printCat(cat1, 1);
+    printCat(cat2, 1);
+
+    // Check error case for Cat::getIdea, Cat::setIdea
+    Cat cat3;
+    cat3.setIdea(4242, "I have lunch");
+    cat3.getIdea(4242);
   }
   return 0;
 }

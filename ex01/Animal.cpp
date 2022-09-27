@@ -30,7 +30,7 @@ const std::string& Animal::getType() const {
 }
 
 Animal& Animal::operator=(const Animal &animal) {
-	std::cout << "Assignation operator is called in Animal" << std::endl;
+	std::cout << CYAN << "Assignation operator is called in Animal" << RESET << std::endl;
 	_type = animal._type;
 	return *this;
 }
