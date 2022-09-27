@@ -7,6 +7,11 @@
 #include "Cat.hpp"
 #include "Brain.hpp"
 
+void  printAnimalIdea(Animal *animals, const size_t sample_i) {
+  std::cout << animals->getType() << "'s idea[" << sample_i << "]:"
+            << animals->getIdea(sample_i) << std::endl;
+}
+
 int main() {
   {
     std::cout << "*****Subject main*****" << std::endl;
@@ -31,13 +36,13 @@ int main() {
       }
     }
 
-    Dog dog;
-//  std::cout << dog.getIdeas(0) << std::endl;
     for (int i = 0; i < 4; i++) {
       animals[i]->makeSound();
-      int sample_index = 3; // 0 ~ 99
-      std::cout << animals[i]->getType() << "'s idea[" << sample_index << "]:"
-                << animals[i]->getIdea(sample_index) << std::endl;
+      animals[i]->setIdea(3, "I have lunch");
+      animals[i]->setIdea(4242, "I have lunch"); // Out of range
+      printAnimalIdea(animals[i], 3);
+      printAnimalIdea(animals[i], 4);
+      printAnimalIdea(animals[i], 424242); // Out of range
     }
 
     for (int i = 0; i < 4; i++) {

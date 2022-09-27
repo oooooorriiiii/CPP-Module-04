@@ -48,3 +48,7 @@ void Dog::makeSound() const {
 const std::string &Dog::getIdea(const size_t &idx) const {
   return brain_->getIdea(idx);
 }
+
+void Dog::setIdea(const size_t &idx, const std::string &idea) {
+  brain_->setIdea(idx, idea);
+}

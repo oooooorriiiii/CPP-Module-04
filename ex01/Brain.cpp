@@ -39,7 +39,15 @@ const std::string &Brain::getIdea(const size_t &idx) const {
   if (idx < 100) {
     return _ideas[idx];
   } else {
-    std::cerr << "Out of range" << std::endl;
+    std::cout << MAGENTA << "Return first idea, because array index is out of range" << RESET << std::endl;
     return _ideas[0];
+  }
+}
+
+void Brain::setIdea(const size_t &idx, const std::string &idea) {
+  if (idx < 100) {
+    _ideas[idx] = idea;
+  } else {
+    std::cout << MAGENTA << "Can't set idea, because array index is out of range" << RESET << std::endl;
   }
 }
