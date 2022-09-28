@@ -4,29 +4,51 @@
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal("Dog") {
-	std::cout << "Default constructor is called in Dog" << std::endl;
+Dog::Dog() : Animal("Dog"), brain_(new Brain()) {
+  std::cout << BLUE << "Default constructor is called in Dog" << RESET << std::endl;
 }
 
 Dog::Dog(const std::string &type) : Animal(type) {
-	std::cout << "Constructor is called in Dog" << std::endl;
+  std::cout << BLUE << "Constructor is called in Dog" << RESET << std::endl;
 }
 
-Dog::Dog(const Dog &dog) {
-	*this = dog;
-	std::cout << "Copy constructor is called in Dog" << std::endl;
+Dog::Dog(const Dog &dog) : Animal(dog) {
+  std::cout << BLUE << "Copy constructor is called in Dog" << RESET << std::endl;
+  if (dog.brain_) {
+    brain_ = new Brain(*(dog.brain_));
+  } else {
+    brain_ = NULL;
+  }
 }
 
 Dog::~Dog() {
-	std::cout << "destructor is called in Dog" << std::endl;
+  std::cout << BLUE << "Destructor is called in Dog" << RESET << std::endl;
+  delete brain_;
 }
 
 Dog& Dog::operator=(const Dog &dog) {
-	std::cout << "Assignation operator is called in Dog" << std::endl;
-	_type = dog._type;
-	return *this;
+  std::cout << "Assignation operator is called in Dog" << std::endl;
+  if (this == &dog) {
+    return *this;
+  }
+  _type = dog._type;
+  delete brain_;
+  if (dog.brain_) {
+    brain_ = new Brain(*(dog.brain_));
+  } else {
+    brain_ = NULL;
+  }
+  return *this;
 }
 
 void Dog::makeSound() const {
-	std::cout << "WAN!" << std::endl;
+  std::cout << "WAN!" << std::endl;
+}
+
+const std::string &Dog::getIdea(const size_t &idx) const {
+  return brain_->getIdea(idx);
+}
+
+void Dog::setIdea(const size_t &idx, const std::string &idea) {
+  brain_->setIdea(idx, idea);
 }
