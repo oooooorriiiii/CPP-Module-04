@@ -4,15 +4,15 @@
 
 #include "Dog.hpp"
 
-Dog::Dog() : Animal("Dog"), brain_(new Brain()) {
+Dog::Dog() : AAnimal("Dog"), brain_(new Brain()) {
   std::cout << BLUE << "Default constructor is called in Dog" << RESET << std::endl;
 }
 
-Dog::Dog(const std::string &type) : Animal(type) {
+Dog::Dog(const std::string &type) : AAnimal(type) {
   std::cout << BLUE << "Constructor is called in Dog" << RESET << std::endl;
 }
 
-Dog::Dog(const Dog &dog) : Animal(dog) {
+Dog::Dog(const Dog &dog) : AAnimal(dog) {
   std::cout << BLUE << "Copy constructor is called in Dog" << RESET << std::endl;
   if (dog.brain_) {
     brain_ = new Brain(*(dog.brain_));

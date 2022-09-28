@@ -4,15 +4,15 @@
 
 #include "Cat.hpp"
 
-Cat::Cat() : Animal("Cat"), brain_(new Brain()) {
+Cat::Cat() : AAnimal("Cat"), brain_(new Brain()) {
   std::cout << BLUE << "Default constructor is called in Cat" << RESET << std::endl;
 }
 
-Cat::Cat(const std::string &type) : Animal(type) {
+Cat::Cat(const std::string &type) : AAnimal(type) {
   std::cout << BLUE << "Constructor is called in Cat" << RESET << std::endl;
 }
 
-Cat::Cat(const Cat &cat) : Animal(cat) {
+Cat::Cat(const Cat &cat) : AAnimal(cat) {
   std::cout << BLUE << "Copy constructor is called in Cat" << RESET << std::endl;
   if (cat.brain_) {
     brain_ = new Brain(*(cat.brain_));

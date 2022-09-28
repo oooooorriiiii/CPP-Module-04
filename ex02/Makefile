@@ -4,7 +4,7 @@ CXXFLAGS	:=	-Wall -Werror -Wextra -std=c++98
 NAME	:=	ex02.out
 
 SRCS	:=	main.cpp \
-			Animal.cpp \
+			AAnimal.cpp \
 			Dog.cpp \
 			Cat.cpp \
 			Brain.cpp

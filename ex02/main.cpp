@@ -2,7 +2,7 @@
 // Created by yuumo on 2022/08/02.
 //
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "Brain.hpp"
@@ -20,8 +20,9 @@ void  printCat(const Cat& cat, const size_t sample_i) {
 int main() {
   {
     std::cout << "*****Subject main*****" << std::endl;
-    const Animal *d = new Dog();
-    const Animal *c = new Cat();
+//    const AAnimal *a = new AAnimal(); // error
+    const AAnimal *d = new Dog();
+    const AAnimal *c = new Cat();
 
     d->makeSound();
     c->makeSound();
@@ -31,7 +32,7 @@ int main() {
   }
   {
     std::cout << "*****Test 01 for subject*****" << std::endl;
-    Animal *animals[4];
+    AAnimal *animals[4];
 
     for (int i = 0; i < 4; i++) {
       if (i % 2) {
