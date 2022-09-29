@@ -10,11 +10,11 @@ SRCS	:=	main.cpp \
 			WrongAnimal.cpp \
 			WrongCat.cpp
 
-OBJS	:=	$(SRCS:.cpp=.o)
+OBJS	:=	$(SRCS:%.cpp=%.o)
 
 .PHONY:	all clean fclean re
 
-.o: .cpp
+%.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
