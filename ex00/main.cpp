@@ -32,14 +32,18 @@ int main() {
     std::cout << "WrongAnimal" << std::endl;
 
     const WrongAnimal *wrongMeta = new WrongAnimal();
+    const WrongAnimal *wrongCat = new WrongCat(); // upcast
     const WrongCat *k = new WrongCat();
-    std::cout << k->getType() << " " << std::endl;
+    std::cout << k->getType() << std::endl;
     //
     k->makeSound();
+    wrongCat->makeSound();
+    static_cast<const WrongAnimal *>(k)->makeSound();
     wrongMeta->makeSound();
 
     delete wrongMeta;
     delete k;
+    delete wrongCat;
   }
 
   return 0;

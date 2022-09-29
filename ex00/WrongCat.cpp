@@ -26,5 +26,5 @@ WrongCat &WrongCat::operator=(const WrongCat &dog) {
 }
 
 void WrongCat::makeSound() const {
-  std::cout << "GRAAAAAAAAAAAAAAAA" << std::endl;
+  std::cout << "GRAAAAAAAAAAAAAAAA (A wrong cat meowed)" << std::endl;
 }
