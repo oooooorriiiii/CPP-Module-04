@@ -65,6 +65,10 @@ int main() {
     printDog(dog1, 1);
     printDog(dog2, 1);
 
+    dog2 = dog1;
+    printDog(dog1, 1);
+    printDog(dog2, 1);
+
     // Check error case for Dog::getIdea, Dog::setIdea
     Dog dog3;
     dog3.setIdea(4242, "I have lunch");
@@ -83,6 +87,10 @@ int main() {
     printCat(cat2, 1);
 
     cat1.setIdea(1, "I learn programming");
+    printCat(cat1, 1);
+    printCat(cat2, 1);
+
+    cat2 = cat1;
     printCat(cat1, 1);
     printCat(cat2, 1);
 
