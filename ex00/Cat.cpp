@@ -9,10 +9,6 @@ Cat::Cat() : Animal("Cat") {
             << std::endl;
 }
 
-Cat::Cat(const std::string &type) : Animal(type) {
-  std::cout << BLUE << "Constructor is called in Cat" << RESET << std::endl;
-}
-
 Cat::Cat(const Cat &cat) : Animal(cat) {
   *this = cat;
   std::cout << BLUE << "Copy constructor is called in Cat" << RESET

@@ -9,10 +9,6 @@ Dog::Dog() : Animal("Dog") {
             << std::endl;
 }
 
-Dog::Dog(const std::string &type) : Animal(type) {
-  std::cout << BLUE << "Constructor is called in Dog" << RESET << std::endl;
-}
-
 Dog::Dog(const Dog &dog) : Animal(dog) {
   *this = dog;
   std::cout << BLUE << "Copy constructor is called in Dog" << RESET

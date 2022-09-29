@@ -8,10 +8,6 @@ Dog::Dog() : Animal("Dog"), brain_(new Brain()) {
 	std::cout << BLUE << "Default constructor is called in Dog" << RESET << std::endl;
 }
 
-Dog::Dog(const std::string &type) : Animal(type) {
-	std::cout << BLUE << "Constructor is called in Dog" << RESET << std::endl;
-}
-
 Dog::Dog(const Dog &dog) : Animal(dog) {
 	std::cout << BLUE << "Copy constructor is called in Dog" << RESET << std::endl;
     if (dog.brain_) {
